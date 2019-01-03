@@ -67,6 +67,23 @@ public:
 	ListNode* _head;
 };
 
+class Solution2 {
+public:
+	vector<int> printListFromTailToHead(ListNode* head) {
+		vector<int> value;
+		if (head != NULL)
+		{
+			value.insert(value.begin(), head->val);
+			while (head->next != NULL)
+			{
+				value.insert(value.begin(), head->next->val);
+				head = head->next;
+			}
+
+		}
+		return value;
+	}
+};
 
 int main(){
 	Solution s;
@@ -76,6 +93,11 @@ int main(){
 	s.CreateLinklist(4);
 	s.CreateLinklist(5);
 	vector<int> arrayLists=s.printListFromTailToHead(s._head);
+	int i = 0;
+	for (i = 0; i < arrayLists.size(); ++i){
+		cout << arrayLists[i] << " ";
+	}
+	cout << endl;
 	system("pause");
 	return 0;
 }
