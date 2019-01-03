@@ -33,7 +33,7 @@ public:
 	}
 	ListNode* BuyNewNode(int val){
 		ListNode *NewNode = (ListNode*)new int(val);
-		if (nullptr != NewNode){
+		if (nullptr == NewNode){
 			return nullptr;
 		}
 		NewNode->next = nullptr;
@@ -46,7 +46,7 @@ public:
 			return;
 		}
 		NewNode->next = _head;
-		_head->next = NewNode;
+		_head= NewNode;
 	}
 	~Solution(){
 		ListNode* pcur = _head;
