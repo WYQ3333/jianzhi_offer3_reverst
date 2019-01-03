@@ -41,13 +41,12 @@ public:
 		return NewNode;
 	}
 	void CreateLinklist(int val){
-		ListNode *head = nullptr;
 		ListNode *NewNode = BuyNewNode(val);
 		if (NewNode == nullptr){
 			return;
 		}
-		NewNode->next = head;
-		head->next = NewNode;
+		NewNode->next = _head;
+		_head->next = NewNode;
 	}
 	~Solution(){
 		ListNode* pcur = _head;
