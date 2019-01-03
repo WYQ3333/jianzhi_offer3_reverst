@@ -24,11 +24,16 @@ public:
 		ListNode *pre = head;
 		head = nullptr;
 		while (pcur!= nullptr){
-			arrayList[i++] = pcur->val;
 			pcur = pcur->next;
 			pre->next = head;
 			head = pre;
 			pre = pcur;
+		}
+		pcur = head;
+		_head = head;
+		while (pcur != nullptr){
+			arrayList[i++] = pcur->val;
+			pcur = pcur->next;
 		}
 		return arrayList;
 	}
