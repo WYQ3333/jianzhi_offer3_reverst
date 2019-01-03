@@ -18,16 +18,17 @@ public:
 		:_head(nullptr){
 	}
 	vector<int> printListFromTailToHead(ListNode* head) {
-		vector<int> arrayList;
+		vector<int> arrayList(10);
 		int i = 0;
 		ListNode *pcur = head;
 		ListNode *pre = head;
+		head = nullptr;
 		while (pcur!= nullptr){
+			arrayList[i++] = pcur->val;
 			pcur = pcur->next;
-			pre->next = head->next;
+			pre->next = head;
 			head = pre;
 			pre = pcur;
-			arrayList[i++] = pre->val;
 		}
 		return arrayList;
 	}
