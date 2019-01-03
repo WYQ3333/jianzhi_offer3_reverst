@@ -20,8 +20,8 @@ public:
 	vector<int> printListFromTailToHead(ListNode* head) {
 		vector<int> arrayList;
 		int i = 0;
-		ListNode *pcur = _head;
-		ListNode *pre = _head;
+		ListNode *pcur = head;
+		ListNode *pre = head;
 		while (pcur!= nullptr){
 			pcur = pcur->next;
 			pre->next = head->next;
@@ -69,6 +69,7 @@ int main(){
 	s.CreateLinklist(3);
 	s.CreateLinklist(4);
 	s.CreateLinklist(5);
+	vector<int> arrayLists=s.printListFromTailToHead(s._head);
 	system("pause");
 	return 0;
 }
